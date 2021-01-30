@@ -14,9 +14,15 @@ document.addEventListener('keydown', function (event) {
 });
 
 function startEffect(eventTarget) {
-    if (['TEXTAREA', 'INPUT'].includes(eventTarget.tagName) && eventTarget.value) {
-        const newStr = translate(eventTarget.value);
-        eventTarget.value = newStr;
+    const isInput = ['TEXTAREA', 'INPUT'].includes(eventTarget.tagName);
+    const isContentEditable = eventTarget.contentEditable
+    if ((eventTarget.value || eventTarget.innerText) && (isInput || isContentEditable)) {
+        const newStr = translate(eventTarget.value || eventTarget.innerText);
+        if (isInput) {
+            eventTarget.value = newStr;
+        } else if(isContentEditable) {
+            eventTarget.innerText = newStr;
+        }
     }
 }
 
