@@ -1,0 +1,15 @@
+{
+    "name": "keyboard-translator",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description":"This extension lets you switch the language after you started typing in any web page. At the moment only supports hebrew-english.",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["lang.js", "content.js"]
+        }
+    ],
+    "icons": { 
+       "128": "icon_128.png" 
+    }
+}
