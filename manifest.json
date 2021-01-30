@@ -1,6 +1,6 @@
 {
     "name": "keyboard-translator",
-    "version": "1.0.1",
+    "version": "1.1.1",
     "manifest_version": 3,
     "description":"This extension lets you switch the language after you started typing in any web page. At the moment only supports hebrew-english.",
     "permissions": ["activeTab"],

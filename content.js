@@ -15,7 +15,8 @@ document.addEventListener('keydown', function (event) {
 
 function startEffect(eventTarget) {
     const isInput = ['TEXTAREA', 'INPUT'].includes(eventTarget.tagName);
-    const isContentEditable = eventTarget.contentEditable
+    // eventTarget.contentEditable is a string
+    const isContentEditable = eventTarget.contentEditable === "true";
     if ((eventTarget.value || eventTarget.innerText) && (isInput || isContentEditable)) {
         const newStr = translate(eventTarget.value || eventTarget.innerText);
         if (isInput) {
